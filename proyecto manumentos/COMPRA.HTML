@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/9c97409fe5.js" crossorigin="anonymous"></script>
+  <title>Carrito de Compras</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-size: 24px;
+      color: #333333;
+      margin-top: 0;
+    }
+    
+    .cart {
+      text-align: left;
+    }
+    
+    .product {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .product .name {
+      flex: 1;
+      color: #333333;
+    }
+    
+    .product .quantity {
+      width: 40px;
+      text-align: center;
+      color: #333333;
+    }
+    
+    .remove {
+      color: #999999;
+      cursor: pointer;
+    }
+    
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    .modal-content {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 4px;
+    }
+    
+    .empty-cart {
+      color: #999999;
+      margin-top: 20px;
+    }
+    
+    .button {
+      background-color: #3fa336;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Carrito de Compras</h1>
+    <div class="cart">
+      <div class="product">
+        <div class="name">Producto 1</div>
+        <div class="quantity">2</div>
+        <div class="remove" onclick="removeProduct(this)">Eliminar</div>
+      </div>
+      <div class="product">
+        <div class="name">Producto 2</div>
+        <div class="quantity">1</div>
+        <div class="remove" onclick="removeProduct(this)">Eliminar</div>
+      </div>
+    </div>
+    <button class="button" onclick="checkout()">Pagar</button>
+    <div class="modal" id="modal" tabindex="-1" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+          </div>
+          <div class="modal-body">
+            <p>Su compra se a realizado con exito :)</p>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-primary" onclick="redirectToHome()" href="manumentos.html">volviendo a inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="empty-cart" class="empty-cart" style="display: none;">Su carrito está vacío. Por favor, llénelo.</div>
+    <button class="button" onclick="addProduct()">Añadir Producto</button>
+    <button class="button" onclick="removeAllProducts()">Eliminar</button>
+  </div>
+
+  <script>
+    function removeProduct(element) {
+      element.parentNode.remove();
+      checkCartEmpty();
+    }
+
+    function checkout() {
+      const cart = document.querySelector('.cart');
+      if (cart.children.length === 0) {
+        showEmptyCartMessage();
+      } else {
+        showModal();
+      }
+    }
+
+    function showEmptyCartMessage() {
+      document.getElementById('empty-cart').style.display = 'block';
+    }
+
+    function showModal() {
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function redirectToHome() {
+      // Aquí puedes redireccionar a la página de inicio o realizar cualquier acción necesaria
+      alert("Redireccionando a la página de inicio...");
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function addProduct() {
+      const cart = document.querySelector('.cart');
+      const product = document.createElement('div');
+      product.classList.add('product');
+      product.innerHTML = `
+        <div class="name">Nuevo Producto</div>
+        <div class="quantity">1</div>
+        <div class="remove" onclick="removeProduct(this)">Eliminar</div>
+      `;
+      cart.appendChild(product);
+      hideEmptyCartMessage();
+    }
+
+    function removeAllProducts() {
+      const cart = document.querySelector('.cart');
+      while (cart.firstChild) {
+        cart.firstChild.remove();
+      }
+      showEmptyCartMessage();
+    }
+
+    function hideEmptyCartMessage() {
+      document.getElementById('empty-cart').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

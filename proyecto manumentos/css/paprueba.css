@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+
+
+#fondo{
+    background-image: url(imagenes/maxresdefault.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+body{
+
+    
+    background: linear-gradient(to right, #3b3838,    #d3d9f3);
+
+ 
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+ 
+}
+
+#centrado{
+    margin: auto;
+    margin: auto;
+    border: 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+#ajuste{
+    padding: 3px;
+
+}
+
+#izquierda{
+    margin-left: 8rem;
+
+
+}
+.derecha{
+    justify-content: right;
+}
+h2:hover{
+     font-family: 'Josefin Sans', sans-serif;
+}
+
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+   
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+
+}
+p{
+    color: #000000e5;
+}
+
+#letrita{
+  color: aliceblue;
+}
+
+.contorno{
+    padding: 0;
+    min-width: 100%;
+    height: 50px;
+    border-radius: auto;
+}
+#boton{
+    display: flex;
+    justify-content: end;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+
+  .btn-volver {
+    /* position: absolute;
+          top: 0;
+          left: 0;
+          margin: 20px; */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .btn-volver:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .top-banner {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .top-banner input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 60%;
+    max-width: 500px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .top-banner button[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .top-banner button[type="submit"]:hover {
+    background-color: #d32f2f;
+  }
+
+  .top-banner .msg {
+    display: block;
+    margin-top: 10px;
+    color: #f44336;
+    font-size: 14px;
+  }
+
+  .ajax-section {
+    margin-top: 30px;
+  }
+
+  .ajax-section .cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  .ajax-section .city {
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .ajax-section .city h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .ajax-section .city h2 span {
+    font-size: 30px;
+  }
+
+  .ajax-section .city h2 sup {
+    font-size: 16px;
+    color: #999;
+    margin-left: 5px;
+  }
+
+  .ajax-section .city-temp {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+
+  .ajax-section .city-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .ajax-section figcaption {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  img:hover{
+    box-shadow: 0 0 #666;
+    scale: 1.05
+}

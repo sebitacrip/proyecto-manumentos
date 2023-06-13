@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+
+h1{
+    font-family: 'Paytone One', sans-serif;
+    
+    text-shadow: 1px 1px 2px pink;
+}
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.botonsito-item{
+    background-color: black;
+    color: white;
+    filter: brightness(50%);
+}
+h1{
+    text-align: center;
+    color: rgb(9, 241, 160);
+    padding: 2ex;
+}
+.cardo{
+    margin: auto;
+    background-color: violet;
+    margin: auto;
+    border: 1px;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
+
+
+img:hover{
+    box-shadow: 0 0 #666;
+    scale: 1.05
+}
+
+#a{
+     text-decoration: none;
+     color: aliceblue;
+}
+
+
+
+/*display: grid;
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    border: 1px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+    box-shadow: 0 0 #666;
+    scale: 1.05*/
